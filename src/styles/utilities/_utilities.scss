@@ -3,6 +3,7 @@
 @import "./node_modules/bootstrap/scss/variables";
 @import "./node_modules/bootstrap/scss/maps";
 @import "./node_modules/bootstrap/scss/mixins";
+@import "./node_modules/bootstrap/scss/utilities";
 
 /// fons fs-
 $font-size-base: 1rem; // Assumes the browser default, typically `16px`
@@ -16,27 +17,46 @@ $h7-font-size: 0.875rem;
 $h8-font-size: 0.75rem;
 
 
-$font-sizes: (
-  1: $h1-font-size,
-  2: $h2-font-size,
-  3: $h3-font-size,
-  4: $h4-font-size,
-  5: $h5-font-size,
-  6: $h6-font-size,
-  7: $h7-font-size,
-  8: $h8-font-size,
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "font-weight": (
+      property: font-weight,
+      class: "fw",
+      values: (
+        "400": 400,
+        "500": 500,
+        "700": 700,
+      )
+    )
+  )
 );
 
-
-// $new-font-weights: (
-//   "400": 400,
-//   "800": 800,
-//   "900": 900
-// );
-
-// $font-family: map-merge($font-family, ("weights": $new-font-weights));
-
-@import "./node_modules/bootstrap/scss/utilities";
+$utilities: map-merge(
+  $utilities,
+  (
+    "font-size": (
+      property: font-size,
+      class: "fs",
+      values: (
+        1: $h1-font-size,
+        2: $h2-font-size,
+        3: $h3-font-size,
+        4: $h4-font-size,
+        5: $h5-font-size,
+        6: $h6-font-size,
+        7: $h7-font-size,
+        8: $h8-font-size,
+      )
+    )
+  )
+);
 
 @import "./node_modules/bootstrap/scss/utilities/api";
 
