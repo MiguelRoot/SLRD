@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import 'styles/base/html';
+@import 'styles/base/font';
+
+@import 'styles/primeng/themes/material/material-light/standard/indigo/theme';
+@import "primeng/resources/primeng.css";
+
+@import 'styles/utilities/grid';
+@import 'styles/utilities/colors';
+@import 'styles/utilities/utilities';
+@import 'styles/utilities/hacks';
